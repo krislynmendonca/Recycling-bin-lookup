@@ -1,16 +1,16 @@
 item,contact
-syringe,"Campus Health Services — sharps@university.edu | (555) 123-4567"
-battery,"Campus Facilities — Hazardous Waste: hazwaste@university.edu | (555) 123-4567"
-car battery,"Campus Facilities — Automotive: auto@university.edu | (555) 123-4568"
-laptop battery,"Campus IT — E-Waste: ewaste@university.edu | (555) 123-4569"
-phone battery,"Campus IT — E-Waste: ewaste@university.edu | (555) 123-4569"
-chemical waste,"Campus Facilities — Hazardous Waste: hazwaste@university.edu | (555) 123-4567"
-light bulb,"Campus Facilities — Hazardous Waste: hazwaste@university.edu | (555) 123-4567"
-fluorescent bulb,"Campus Facilities — Hazardous Waste: hazwaste@university.edu | (555) 123-4567"
-paint can,"Campus Facilities — Hazardous Waste: hazwaste@university.edu | (555) 123-4567"
-motor oil,"Campus Facilities — Automotive: auto@university.edu | (555) 123-4568"
-pesticide,"Campus Facilities — Hazardous Waste: hazwaste@university.edu | (555) 123-4567"
-medical waste,"Campus Health Services — sharps@university.edu | (555) 123-4567"
-aerosol can,"Campus Facilities — Hazardous Waste: hazwaste@university.edu | (555) 123-4567"
-nail polish,"Campus Facilities — Hazardous Waste: hazwaste@university.edu | (555) 123-4567"
-ink cartridge,"Campus IT — E-Waste: ewaste@university.edu | (555) 123-4569"
+syringe,HKU Health Service — uhealth@hku.hk | (852) 2549-4686
+battery,HKU Estates Office — Hazardous Waste: chemical@hku.hk | (852) 3917-2402
+car battery,HKU Estates Office — Automotive: parking@hku.hk or eosecure@hku.hk | (852) 3917-2882 or (852) 3917-2883
+laptop battery,HKU IT Services — E-Waste: ithelp@hku.hk | (852) 3917-0123
+phone battery,HKU IT Services — E-Waste: ithelp@hku.hk | (852) 3917-0123
+chemical waste,HKU Estates Office — Hazardous Waste: chemical@hku.hk | (852) 3917-2402
+light bulb,HKU Estates Office — Hazardous Waste: chemical@hku.hk | (852) 3917-2402
+fluorescent bulb,HKU Estates Office — Hazardous Waste: chemical@hku.hk | (852) 3917-2402
+paint can,HKU Estates Office — Hazardous Waste: chemical@hku.hk | (852) 3917-2402
+motor oil,HKU Estates Office — Automotive: parking@hku.hk or eosecure@hku.hk | (852) 3917-2882 or (852) 3917-2883
+pesticide,HKU Estates Office — Hazardous Waste: chemical@hku.hk | (852) 3917-2402
+medical waste,HKU Health Service — uhealth@hku.hk | (852) 2549-4686
+aerosol can,HKU Estates Office — Hazardous Waste: chemical@hku.hk | (852) 3917-2402
+nail polish,HKU Estates Office — Hazardous Waste: chemical@hku.hk | (852) 3917-2402
+ink cartridge,HKU IT Services — E-Waste: ithelp@hku.hk | (852) 3917-0123
