@@ -1,21 +1,21 @@
 item,synonyms,bin,citation,condition
-plastic bottle,"water bottle|soda bottle|pet bottle",recycling,"[SOURCE] p.2",
-aluminum can,"pop can|soda can|tin can|beer can",recycling,"[SOURCE] p.2",
-newspaper,"news paper",recycling,"[SOURCE] p.4",
-paper,"office paper|printer paper",recycling,"[SOURCE] p.4",
-cardboard box,"cardboard|shipping box",recycling,"[SOURCE] p.4","if clean → recycling; if greasy → compost"
-milk carton,"carton",recycling,"[SOURCE] p.4",
-glass jar,"jam jar|pickle jar",recycling,"[SOURCE] p.2",
-glass bottle,"wine bottle|beer bottle",recycling,"[SOURCE] p.2","if intact → recycling; if broken → hazardous"
-coffee cup,"paper cup|disposable cup",trash,"[SOURCE] p.5",
-chip bag,"snack bag|crisp packet",trash,"[SOURCE] p.5",
-styrofoam,"styrofoam cup|foam container",trash,"[SOURCE] p.5",
-plastic bag,"grocery bag|shopping bag",trash,"[SOURCE] p.5",
-wrapper,"candy wrapper|food wrapper",trash,"[SOURCE] p.5",
-ceramic mug,"coffee mug|broken mug",trash,"[SOURCE] p.6",
-food scraps,"food waste|leftovers",compost,"[SOURCE] p.3",
-banana peel,"banana skin",compost,"[SOURCE] p.3",
-apple core,"apple",compost,"[SOURCE] p.3",
-tea bag,"teabag",compost,"[SOURCE] p.3",
-paper towel,"napkin|tissue",compost,"[SOURCE] p.3",
-pizza box,"pizza carton",compost,"[SOURCE] p.3","if clean → compost; if greasy → trash"
+plastic bottle,water bottle|soda bottle|pet bottle,recycling,HKU Recycling Guide p.2,
+aluminum can,pop can|soda can|tin can|beer can,recycling,HKU Recycling Guide p.2,
+newspaper,news paper,recycling,HKU Recycling Guide p.4,
+paper,office paper|printer paper,recycling,HKU Recycling Guide p.4,
+cardboard box,cardboard|shipping box,recycling,HKU Recycling Guide p.4,if clean → recycling; if greasy → compost
+milk carton,carton,recycling,HKU Recycling Guide p.4,
+glass jar,jam jar|pickle jar,recycling,HKU Recycling Guide p.2,
+glass bottle,wine bottle|beer bottle,recycling,HKU Recycling Guide p.2,if intact → recycling; if broken → hazardous
+coffee cup,paper cup|disposable cup,trash,HKU Recycling Guide p.5,
+chip bag,snack bag|crisp packet,trash,HKU Recycling Guide p.5,
+styrofoam,styrofoam cup|foam container,trash,HKU Recycling Guide p.5,
+plastic bag,grocery bag|shopping bag,trash,HKU Recycling Guide p.5,
+wrapper,candy wrapper|food wrapper,trash,HKU Recycling Guide p.5,
+ceramic mug,coffee mug|broken mug,trash,HKU Recycling Guide p.6,
+food scraps,food waste|leftovers,compost,HKU Recycling Guide p.3,
+banana peel,banana skin,compost,HKU Recycling Guide p.3,
+apple core,apple,compost,HKU Recycling Guide p.3,
+tea bag,teabag,compost,HKU Recycling Guide p.3,
+paper towel,napkin|tissue,compost,HKU Recycling Guide p.3,
+pizza box,pizza carton,compost,HKU Recycling Guide p.3,if clean → compost; if greasy → trash
