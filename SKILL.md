@@ -5,7 +5,7 @@
 **A skill for agents and apps to determine the correct HKU recycling bin — with citations, no guessing.**
 
 [![Status](https://img.shields.io/badge/status-stable-brightgreen)]()
-[![Data](https://img.shields.io/badge/data-CSV-blue)]()
+[![Data](https://img.shields.io/badge/data-CSV-blue)](https://github.com/krislynmendonca/Recycling-bin-lookup/tree/main/data)
 [![Method](https://img.shields.io/badge/method-deterministic-orange)]()
 
 </div>
