@@ -55,7 +55,7 @@ That's it — no coding background needed.
 ## Data Source
 
 - **Campus:** University of Hong Kong
-- **Hall:** Lap-Chee College at Jockey Club Student Village III 
+- **Hall:** Lap-Chee College at Jockey Club Student Village III
 - **Source:** *[Exact PDF Title]*, Version [X.X], [Date]
 - **URL:** [exact URL]
 - **Coverage:** 20 items across recycling, compost, and trash
@@ -74,20 +74,20 @@ No hazardous item is ever guessed or binned.
 | Item | Contact |
 |------|---------|
 | syringe | Campus Health Services — uhealth@hku.hk \| (852) 2549-4686 |
-| battery | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402  |
-| car battery | Campus Facilities — Automotive: parking@hku.hk or eosecure@hku.hk\| (852) 3917-2882 or (852) 3917-2883  |
-| laptop battery | Campus IT — E-Waste: ithelp@hku.hk \| (852) 3917-0123  |
-| phone battery | Campus IT — E-Waste: ithelp@hku.hk \| (852) 3917-0123  |
-| chemical waste | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402  |
-| light bulb | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402  |
-| fluorescent bulb | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402  |
-| paint can | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402  |
-| motor oil | Campus Facilities — Automotive: parking@hku.hk or eosecure@hku.hk\| (852) 3917-2882 or (852) 3917-2883  |
-| pesticide | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402  |
-| medical waste | Campus Health Services — uhealth@hku.hk \| (852) 2549-4686  |
-| aerosol can | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402  |
-| nail polish | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402  |
-| ink cartridge | Campus IT — E-Waste: ithelp@hku.hk \| (852) 3917-0123  |
+| battery | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402 |
+| car battery | Campus Facilities — Automotive: parking@hku.hk or eosecure@hku.hk \| (852) 3917-2882 or (852) 3917-2883 |
+| laptop battery | Campus IT — E-Waste: ithelp@hku.hk \| (852) 3917-0123 |
+| phone battery | Campus IT — E-Waste: ithelp@hku.hk \| (852) 3917-0123 |
+| chemical waste | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402 |
+| light bulb | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402 |
+| fluorescent bulb | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402 |
+| paint can | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402 |
+| motor oil | Campus Facilities — Automotive: parking@hku.hk or eosecure@hku.hk \| (852) 3917-2882 or (852) 3917-2883 |
+| pesticide | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402 |
+| medical waste | Campus Health Services — uhealth@hku.hk \| (852) 2549-4686 |
+| aerosol can | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402 |
+| nail polish | Campus Facilities — Hazardous Waste: chemical@hku.hk \| (852) 3917-2402 |
+| ink cartridge | Campus IT — E-Waste: ithelp@hku.hk \| (852) 3917-0123 |
 
 **No hazardous item is ever guessed.** Every refusal includes a contact channel.
 
