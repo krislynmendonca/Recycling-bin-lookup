@@ -1,22 +1,21 @@
 item,synonyms,bin,citation,condition
-pizza box,,compost,"Campus Recycling Guide p.3","if clean → compost; if greasy → trash"
-glass bottle,,recycling,"Campus Recycling Guide p.2","if intact → recycling; if broken → hazardous"
-plastic bottle,"water bottle|soda bottle",recycling,"Campus Recycling Guide p.2",
-aluminum can,"pop can|soda can|tin can",recycling,"Campus Recycling Guide p.2",
-cardboard box,"cardboard",recycling,"Campus Recycling Guide p.4","if clean → recycling; if greasy → compost"
-newspaper,,recycling,"Campus Recycling Guide p.4",
-paper,,recycling,"Campus Recycling Guide p.4",
-coffee cup,,trash,"Campus Recycling Guide p.5",
-chip bag,,trash,"Campus Recycling Guide p.5",
-styrofoam,,trash,"Campus Recycling Guide p.5",
-food scraps,,compost,"Campus Recycling Guide p.3",
-banana peel,,compost,"Campus Recycling Guide p.3",
-apple core,,compost,"Campus Recycling Guide p.3",
-tea bag,,compost,"Campus Recycling Guide p.3",
-paper towel,,compost,"Campus Recycling Guide p.3",
-milk carton,,recycling,"Campus Recycling Guide p.4",
-glass jar,,recycling,"Campus Recycling Guide p.2",
-tin can,,recycling,"Campus Recycling Guide p.2",
-plastic bag,,trash,"Campus Recycling Guide p.5",
-wrapper,,trash,"Campus Recycling Guide p.5",
-ceramic mug,,trash,"Campus Recycling Guide p.6",
+plastic bottle,"water bottle|soda bottle|pet bottle",recycling,"[SOURCE] p.2",
+aluminum can,"pop can|soda can|tin can|beer can",recycling,"[SOURCE] p.2",
+newspaper,"news paper",recycling,"[SOURCE] p.4",
+paper,"office paper|printer paper",recycling,"[SOURCE] p.4",
+cardboard box,"cardboard|shipping box",recycling,"[SOURCE] p.4","if clean → recycling; if greasy → compost"
+milk carton,"carton",recycling,"[SOURCE] p.4",
+glass jar,"jam jar|pickle jar",recycling,"[SOURCE] p.2",
+glass bottle,"wine bottle|beer bottle",recycling,"[SOURCE] p.2","if intact → recycling; if broken → hazardous"
+coffee cup,"paper cup|disposable cup",trash,"[SOURCE] p.5",
+chip bag,"snack bag|crisp packet",trash,"[SOURCE] p.5",
+styrofoam,"styrofoam cup|foam container",trash,"[SOURCE] p.5",
+plastic bag,"grocery bag|shopping bag",trash,"[SOURCE] p.5",
+wrapper,"candy wrapper|food wrapper",trash,"[SOURCE] p.5",
+ceramic mug,"coffee mug|broken mug",trash,"[SOURCE] p.6",
+food scraps,"food waste|leftovers",compost,"[SOURCE] p.3",
+banana peel,"banana skin",compost,"[SOURCE] p.3",
+apple core,"apple",compost,"[SOURCE] p.3",
+tea bag,"teabag",compost,"[SOURCE] p.3",
+paper towel,"napkin|tissue",compost,"[SOURCE] p.3",
+pizza box,"pizza carton",compost,"[SOURCE] p.3","if clean → compost; if greasy → trash"
