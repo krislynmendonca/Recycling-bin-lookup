@@ -8,8 +8,8 @@ A local tool that tells HKU hall residents the correct disposal bin — with a c
 
 [![Course](https://img.shields.io/badge/course-AILT9019-blue)](https://docs.google.com/document/d/1WBkZcDWirk_iRqzOrpBovxm4_qMsqvY7jV7guAyjHf0/edit?tab=t.0)
 [![Status](https://img.shields.io/badge/status-in%20development-yellow)]()
-[![Method](https://img.shields.io/badge/method-CSV%20lookup-orange)](https://github.com/krislynnmendonca/Recycling-bin-lookup/blob/main/SKILL.md)
-[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/krislynnmendonca/Recycling-bin-lookup/blob/main/LICENSE)
+[![Method](https://img.shields.io/badge/method-CSV%20lookup-orange)](https://github.com/krislynmendonca/Recycling-bin-lookup/tree/main/data)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/krislynmendonca/Recycling-bin-lookup/blob/main/LICENSE)
 
 **HKU · Lap Chee College**
 
