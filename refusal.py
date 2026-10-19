@@ -36,10 +36,6 @@ def is_hazardous(normalized_str: str) -> tuple[bool, str]:
     global _hazard_dict
     if _hazard_dict is None:
         load_hazard_items()
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
     if normalized_str in _hazard_dict:
         return True, _hazard_dict[normalized_str]
     return False, ""
@@ -60,17 +56,9 @@ def should_refuse(normalized_str: str, lookup_result: dict | None) -> tuple[bool
     is_haz, contact = is_hazardous(normalized_str)
     if is_haz:
         return True, f"Hazardous item! Please contact: {contact}"
-<<<<<<< HEAD
     # Refuse items with no matching entry inside recycling database
     if lookup_result is None:
         return True, "Recycling information for this item cannot be found. When in doubt, ask building staff."
-=======
-
-    # Refuse items with no matching entry inside recycling database
-    if lookup_result is None:
-        return True, "Recycling information for this item cannot be found. When in doubt, ask building staff."
-
->>>>>>> origin/main
     return False, ""
 
 
@@ -88,7 +76,6 @@ def refusal_message(refuse_flag: bool, message: str) -> str:
     return f"⚠️ {message}"
 
 
-<<<<<<< HEAD
 def get_all_hazard_candidates() -> list[str]:
     """
     Return all normalized hazardous item keys as a public candidate list.
@@ -102,8 +89,6 @@ def get_all_hazard_candidates() -> list[str]:
     return list(_hazard_dict.keys())
 
 
-=======
->>>>>>> origin/main
 if __name__ == "__main__":
     load_hazard_items()
     test1 = "battery"
