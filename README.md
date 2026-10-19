@@ -20,7 +20,7 @@ A local tool that tells HKU hall residents the correct disposal bin — with a c
 ## 🚀 Quick Start — How to Set Up and Run the Core Workflow
 
 ### Prerequisites
-- Python 3.9 or higher
+- Python 3.10 or higher (the core modules use PEP 604 type hints such as `dict | None`)
 - No paid API. No cloud. Runs entirely locally.
 
 ### One-Command Setup
@@ -32,6 +32,8 @@ pip install -r requirements.txt && python app.py
 Then open **http://localhost:5000** in your browser.
 
 That's it — no coding background needed.
+
+> ℹ️ **Repository scope:** this snapshot contains the lookup core (`lookup.py`, `refusal.py`, `normalize.py`), the data tables, the validation script (`check_data.py`) and the test suite (`tests/`). The Flask web app (`app.py`, `templates/`, `static/`) and `requirements.txt` are delivered separately, so the `python app.py` step above does not run from this snapshot alone. To verify the core logic instead, run `python check_data.py` and `python -m pytest tests/ -v`.
 
 ### Step-by-Step (if you prefer)
 
@@ -54,6 +56,8 @@ Once the app is running, open **http://localhost:5000** and try these test input
 
 ### Manual Verification (Type These In)
 
+> The table below assumes the Flask app is running (see the repository-scope note above). The automated `pytest` suite covers the same behaviours without a browser.
+
 | Type this | You should see |
 |-----------|----------------|
 | `plastic bottle` | ✅ Bin: **RECYCLING** + Citation: *HKU Recycling Guide p.2* |
@@ -66,10 +70,10 @@ Once the app is running, open **http://localhost:5000** and try these test input
 ### Automated Verification (Run Tests)
 
 ```bash
-pytest tests/ -v
+python -m pytest tests/ -v
 ```
 
-**Expected result:** All 6 test files pass.
+**Expected result:** All 6 test files pass (150 test cases).
 
 | Test File | What It Verifies |
 |-----------|------------------|
@@ -87,7 +91,7 @@ If everything works:
 - ✅ Known items return the correct bin + citation
 - ✅ Hazardous items are refused with the correct HKU contact
 - ✅ Unknown items are refused with a redirect (no guessing)
-- ✅ All tests pass with `pytest tests/ -v`
+- ✅ All tests pass with `python -m pytest tests/ -v`
 
 ---
 
@@ -128,9 +132,10 @@ If everything works:
 
 - **Campus:** University of Hong Kong
 - **Hall:** Lap-Chee College at Jockey Club Student Village III
-- **Source:** *[Exact PDF Title]*, Version [X.X], [Date]
-- **URL:** [exact URL]
-- **Coverage:** 20 items across recycling, compost, and trash
+- **Source:** HKU campus recycling guidance document (not bundled in this repository; citation targets `p.2`–`p.6` throughout)
+- **Cited pages:** `p.2` (recycling), `p.3` (compost), `p.4` (paper / card), `p.5` (trash), `p.6` (ceramics)
+- **Coverage (data):** 20 items in `data/recycling_rules.csv` across recycling, compost and trash, plus 15 items in `data/hazardous_items.csv`
+- **Coverage (tests):** 30 inputs — 10 regular, 10 edge cases, 10 hazardous
 - **Last verified:** 12th October, 2026.
 
 All citations in `data/recycling_rules.csv` point to specific pages in the source above. If the source is updated, this table must be re-verified.
@@ -173,17 +178,25 @@ The test set has **30 items**:
 | Edge cases | 10 | ≥ 70% pass (bin/condition/refusal), zero invented rules |
 | Hazardous | 10 | 100% refusal |
 
-Run all tests:
+Run all tests (requires `pytest` — install it with `pip install pytest`):
 
 ```bash
-pytest tests/ -v
+python -m pytest tests/ -v
 ```
 
 ---
 
-## 🔬 Independent Labeling
+## 🔬 Test Set & Labeling
 
-The 30-item test set was independently labeled by a team member using only the published campus rules, without access to the system's CSV, to avoid circular validation.
+The 30 expected answers live in `tests/` and are expressed against the rules recorded in
+`data/*.csv` — the bin, the condition (if any) and the source page each item cites
+(`HKU Recycling Guide p.2`–`p.6`).
+
+**Known limitation, stated honestly:** the source guide document is not bundled in this repository,
+so the suite verifies that the code follows the recorded rules — it does not independently re-verify
+the rule table against the upstream document. If a rule in `data/recycling_rules.csv` were wrong,
+these tests would still pass. Any independent cross-check of the data has to be done against the
+source document, outside this repository.
 
 ---
 
@@ -204,21 +217,23 @@ The 30-item test set was independently labeled by a team member using only the p
 ```
 campus-recycling-helper/
 ├── README.md
-├── requirements.txt
+├── requirements.txt          # delivered with the Flask app (not in this snapshot)
 ├── SKILL.md
 ├── .gitignore
-├── app.py
-├── lookup.py
+├── app.py                    # Flask app (not in this snapshot)
+├── check_data.py             # CSV validation gate
+├── lookup.py                 # lookup_item() + lookup_bin() unified entry point
 ├── refusal.py
 ├── normalize.py
 ├── data/
 │   ├── recycling_rules.csv
 │   └── hazardous_items.csv
-├── templates/
+├── templates/                # not in this snapshot
 │   └── index.html
-├── static/
+├── static/                   # not in this snapshot
 │   └── style.css
 └── tests/
+    ├── conftest.py           # puts the project root on sys.path for pytest
     ├── test_30_items.py
     ├── test_synonyms.py
     ├── test_conditions.py

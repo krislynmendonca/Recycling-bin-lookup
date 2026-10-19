@@ -1,3 +1,4 @@
+import re
 import string
 
 def normalize_text(raw_input: str) -> str:
@@ -15,6 +16,8 @@ def normalize_text(raw_input: str) -> str:
     cleaned = raw_input.strip().lower()
     # Remove all punctuation symbols from string
     cleaned = cleaned.translate(str.maketrans('', '', string.punctuation))
+    # Collapse consecutive whitespace into a single space, e.g. "tea   bag" -> "tea bag"
+    cleaned = re.sub(r"\s+", " ", cleaned)
     return cleaned
 
 
