@@ -3,6 +3,7 @@ from lookup import lookup_item
 from refusal import should_refuse, refusal_message, is_hazardous
 from resolver import resolve_item
 
+
 def full_pipeline(raw_input: str):
     """
     Two-stage pipeline with Stage0 safety pre-check.
@@ -30,8 +31,7 @@ def full_pipeline(raw_input: str):
 
     # ===== Stage 1: Exact match lookup =====
     lookup_res = lookup_item(norm)
-    final_item_name = norm # Record item name for final hazard evaluation
-
+    final_item_name = norm  # Record item name for final hazard evaluation
     if lookup_res is not None:
         print("Stage1: Exact match found, skip LLM")
     else:
@@ -41,7 +41,7 @@ def full_pipeline(raw_input: str):
             llm_resolved_item = resolver_result["resolved_item"]
             print(f"Stage2: LLM resolved to: {llm_resolved_item}")
             lookup_res = lookup_item(llm_resolved_item)
-            final_item_name = llm_resolved_item # Update item name for final hazard check
+            final_item_name = llm_resolved_item  # Update item name for final hazard check
         else:
             print("Stage2: LLM cannot resolve valid item")
             lookup_res = None
@@ -59,11 +59,12 @@ def full_pipeline(raw_input: str):
     print(f"Refuse: {refuse_flag}, Message: {formatted_msg}")
     return refuse_flag, msg, lookup_res
 
+
 if __name__ == "__main__":
     full_pipeline("Pop Can!")
     full_pipeline("battery")
-    full_pipeline("batterry") # Test misspelled hazardous item, must be blocked
-    full_pipeline("fanda can") # Test alias resolvable only via LLM stage2
+    full_pipeline("batterry")  # Test misspelled hazardous item, must be blocked
+    full_pipeline("fanda can")  # Test alias resolvable only via LLM stage2
     full_pipeline("random unknown item")
     full_pipeline("Plastic Bottle!")
     full_pipeline("pizza box")

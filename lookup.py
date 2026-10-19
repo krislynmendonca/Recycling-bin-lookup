@@ -1,10 +1,13 @@
 import csv
 import os
 from normalize import normalize_text
+
 # Base directory points to project root (lookup.py resides in project root folder)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 RULES_CSV_PATH = os.path.join(BASE_DIR, "data", "recycling_rules.csv")
+
 _rule_dict = None
+
 
 def load_recycling_rules():
     """
@@ -21,12 +24,14 @@ def load_recycling_rules():
             bin_type = row["bin"]
             citation = row["citation"]
             condition = row["condition"]
+
             # Register main item entry
             _rule_dict[item_name] = {
                 "bin": bin_type,
                 "citation": citation,
                 "condition": condition
             }
+
             # Split synonyms using | separator and register each synonym entry
             synonyms_raw = row["synonyms"]
             if synonyms_raw:
@@ -38,6 +43,7 @@ def load_recycling_rules():
                             "citation": citation,
                             "condition": condition
                         }
+
 
 def lookup_item(normalized_str: str) -> dict | None:
     """
@@ -52,6 +58,7 @@ def lookup_item(normalized_str: str) -> dict | None:
         load_recycling_rules()
     return _rule_dict.get(normalized_str, None)
 
+
 def get_all_candidates() -> list[str]:
     """
     Return all normalized keys from recycling rule dict for LLM closed-set candidate list.
@@ -60,6 +67,7 @@ def get_all_candidates() -> list[str]:
     if _rule_dict is None:
         load_recycling_rules()
     return list(_rule_dict.keys())
+
 
 if __name__ == "__main__":
     load_recycling_rules()
