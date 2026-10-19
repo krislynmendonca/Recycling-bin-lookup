@@ -79,11 +79,14 @@ def refusal_message(refuse_flag: bool, message: str) -> str:
     return f"⚠️ {message}"
 
 
-if __name__ == "__main__":
-    load_hazard_items()
-    test1 = "battery"
-    hazard, contact = is_hazardous(test1)
-    print(f"Test '{test1}': hazardous={hazard}, contact={contact}")
-    test2 = "plastic bottle"
-    hazard2, contact2 = is_hazardous(test2)
-    print(f"Test '{test2}': hazardous={hazard2}, contact={contact2}")
+def get_all_hazard_candidates() -> list[str]:
+    """
+    Return all normalized hazardous item keys as a public candidate list.
+    Safely initializes the dataset if it has not been loaded yet.
+    Returns:
+        List of normalized hazardous item name strings
+    """
+    global _hazard_dict
+    if _hazard_dict is None:
+        load_hazard_items()
+    return list(_hazard_dict.keys())
