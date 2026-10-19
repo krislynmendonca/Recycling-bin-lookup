@@ -57,8 +57,17 @@ def lookup_item(normalized_str: str) -> dict | None:
     global _rule_dict
     if _rule_dict is None:
         load_recycling_rules()
-
     return _rule_dict.get(normalized_str, None)
+
+
+def get_all_candidates() -> list[str]:
+    """
+    Return all normalized keys from recycling rule dict for LLM closed-set candidate list.
+    """
+    global _rule_dict
+    if _rule_dict is None:
+        load_recycling_rules()
+    return list(_rule_dict.keys())
 
 
 def lookup_bin(raw_input: str) -> dict:
@@ -72,7 +81,6 @@ def lookup_bin(raw_input: str) -> dict:
         status is one of: found, condition, refused, not_found, empty
     """
     key = normalize_text(raw_input)
-
     if not key:
         return {
             "status": "empty",
@@ -131,6 +139,11 @@ if __name__ == "__main__":
     test_input2 = "plastic bottle"
     res2 = lookup_item(test_input2)
     print(f"Lookup '{test_input2}' result: {res2}")
+
+    # Test candidate export
+    candidates = get_all_candidates()
+    print(f"Total candidate entries: {len(candidates)}")
+
     print(f"lookup_bin('pizza box') = {lookup_bin('pizza box')}")
     print(f"lookup_bin('battery') = {lookup_bin('battery')}")
     print(f"lookup_bin('unknown thing') = {lookup_bin('unknown thing')}")
