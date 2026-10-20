@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find the correct HKU recycling, compost or general-waste bin with a cited campus rule.">
+  <title>Campus Recycling Helper | HKU</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page-glow page-glow-one" aria-hidden="true"></div>
+  <div class="page-glow page-glow-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('index') }}" aria-label="Campus Recycling Helper home">
+      <span class="brand-mark" aria-hidden="true">♻</span>
+      <span>
+        <strong>Campus Recycling</strong>
+        <small>HKU · Lap-Chee College</small>
+      </span>
+    </a>
+    <span class="local-badge"><span aria-hidden="true"></span> Local rule lookup</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">STOP GUESSING. SORT WITH CONFIDENCE.</p>
+      <h1 id="page-title">One item.<br><span>The right bin.</span></h1>
+      <p class="hero-copy">
+        Search the campus recycling rules used at Lap-Chee College.
+        Every answer comes with its source—and hazardous items are never guessed.
+      </p>
+    </section>
+
+    <section class="lookup-card" aria-labelledby="search-title">
+      <div class="card-heading">
+        <div>
+          <p class="step-label">01 · SEARCH</p>
+          <h2 id="search-title">What are you throwing away?</h2>
+        </div>
+        <span class="citation-chip">Guide pages 2–6</span>
+      </div>
+
+      <form class="search-form" action="{{ url_for('lookup') }}" method="post">
+        <label class="sr-only" for="item">Item name</label>
+        <div class="search-field">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input
+            id="item"
+            name="item"
+            type="text"
+            value="{{ query }}"
+            placeholder="e.g. plastic bottle, pizza box, battery"
+            autocomplete="off"
+            maxlength="120"
+            required
+            autofocus
+          >
+        </div>
+        <button class="primary-button" type="submit">
+          Find my bin
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <div class="search-hints" aria-label="Example searches">
+        <span>Try:</span>
+        <span class="hint-chip">pop can</span>
+        <span class="hint-chip">pizza box</span>
+        <span class="hint-chip">battery</span>
+      </div>
+
+      {% if result %}
+        {% if result.status == "found" %}
+          <article class="result-panel result-found" aria-live="polite">
+            <div class="result-icon" aria-hidden="true">{{ bin_details.icon }}</div>
+            <div class="result-body">
+              <p class="result-kicker">
+                {% if resolved_condition %}YOUR CHOICE · RESULT{% else %}MATCH FOUND{% endif %}
+              </p>
+              <h2>Use the {{ bin_details.label }} bin</h2>
+              <p>{{ bin_details.description }}</p>
+              <div class="evidence">
+                <span>Source</span>
+                <strong>{{ result.citation }}</strong>
+              </div>
+            </div>
+          </article>
+        {% elif result.status == "condition" %}
+          <article class="result-panel result-condition" aria-live="polite">
+            <div class="result-icon" aria-hidden="true">?</div>
+            <div class="result-body">
+              <p class="result-kicker">ONE MORE DETAIL</p>
+              <h2>{{ query }} needs a condition check</h2>
+              <p>{{ result.condition }}</p>
+              <form class="condition-form" action="{{ url_for('lookup') }}" method="post">
+                <input type="hidden" name="item" value="{{ query }}">
+                <fieldset>
+                  <legend>Which applies to your item?</legend>
+                  <div class="condition-options">
+                    {% for branch in branches %}
+                      <button type="submit" name="condition_option" value="{{ branch.value }}">
+                        <span>{{ branch.label }}</span>
+                        <small>Use {{ branch.bin_label }}</small>
+                      </button>
+                    {% endfor %}
+                  </div>
+                </fieldset>
+              </form>
+              <div class="evidence">
+                <span>Source</span>
+                <strong>{{ result.citation }}</strong>
+              </div>
+            </div>
+          </article>
+        {% elif result.status == "refused" %}
+          <article class="result-panel result-refused" aria-live="polite">
+            <div class="result-icon" aria-hidden="true">!</div>
+            <div class="result-body">
+              <p class="result-kicker">DO NOT USE A STANDARD BIN</p>
+              <h2>Special handling required</h2>
+              <p>{{ result.message }}</p>
+              {% if result.citation %}
+                <div class="evidence">
+                  <span>Source</span>
+                  <strong>{{ result.citation }}</strong>
+                </div>
+              {% endif %}
+            </div>
+          </article>
+        {% elif result.status == "not_found" %}
+          <article class="result-panel result-not-found" aria-live="polite">
+            <div class="result-icon" aria-hidden="true">⌕</div>
+            <div class="result-body">
+              <p class="result-kicker">NO MATCH IN THE RULE TABLE</p>
+              <h2>We won’t guess this one</h2>
+              <p>{{ result.message }}</p>
+              <p class="safety-note">The lookup only returns items supported by the recorded HKU guide.</p>
+            </div>
+          </article>
+        {% elif result.status == "empty" %}
+          <article class="result-panel result-empty" aria-live="polite">
+            <div class="result-icon" aria-hidden="true">i</div>
+            <div class="result-body">
+              <p class="result-kicker">NO ITEM ENTERED</p>
+              <h2>Enter an item to get started</h2>
+              <p>{{ result.message }}</p>
+            </div>
+          </article>
+        {% endif %}
+      {% endif %}
+    </section>
+
+    <section class="how-it-works" aria-labelledby="how-title">
+      <div>
+        <p class="step-label">HOW IT WORKS</p>
+        <h2 id="how-title">Evidence over guesswork.</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <span>01</span>
+          <strong>Normalise</strong>
+          <p>Spacing, capitals and punctuation are handled before lookup.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <strong>Match safely</strong>
+          <p>Hazardous items are blocked first; only recorded rules are used.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <strong>Show the source</strong>
+          <p>Every bin answer includes a page-level campus citation.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <span class="footer-mark" aria-hidden="true">♻</span>
+      <p><strong>When in doubt, ask building staff.</strong></p>
+    </div>
+    <p>Built for HKU Lap-Chee College residents. Source guide is not bundled with this repository.</p>
+  </footer>
+</body>
+</html>
