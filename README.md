@@ -33,7 +33,7 @@ Then open **http://localhost:5000** in your browser.
 
 That's it — no coding background needed.
 
-> ℹ️ **Repository scope:** this snapshot contains the lookup core (`lookup.py`, `refusal.py`, `normalize.py`), the data tables, the validation script (`check_data.py`) and the test suite (`tests/`). The Flask web app (`app.py`, `templates/`, `static/`) and `requirements.txt` are delivered separately, so the `python app.py` step above does not run from this snapshot alone. To verify the core logic instead, run `python check_data.py` and `python -m pytest tests/ -v`.
+> ℹ️ **Repository scope:** this snapshot contains the lookup core (`lookup.py`, `refusal.py`, `normalize.py`), the Flask web app (`app.py`, `templates/`, `static/`), the data tables, the validation script (`check_data.py`) and the test suite (`tests/`).
 
 ### Step-by-Step (if you prefer)
 
@@ -73,7 +73,7 @@ Once the app is running, open **http://localhost:5000** and try these test input
 python -m pytest tests/ -v
 ```
 
-**Expected result:** All 6 test files pass (150 test cases).
+**Expected result:** All 7 test files pass (160 test cases).
 
 | Test File | What It Verifies |
 |-----------|------------------|
@@ -83,6 +83,7 @@ python -m pytest tests/ -v
 | `test_adversarial.py` | Misspellings and vague inputs are refused |
 | `test_near_miss.py` | Battery variants route to correct channels |
 | `test_citation_accuracy.py` | Every citation includes a page number |
+| `test_app.py` | Search, condition choices, hazardous refusal and not-found screens |
 
 ### What Success Looks Like
 
@@ -217,10 +218,10 @@ source document, outside this repository.
 ```
 campus-recycling-helper/
 ├── README.md
-├── requirements.txt          # delivered with the Flask app (not in this snapshot)
+├── requirements.txt          # pinned web, test and optional LLM dependencies
 ├── SKILL.md
 ├── .gitignore
-├── app.py                    # Flask app (not in this snapshot)
+├── app.py                    # Flask app and condition-choice integration
 ├── check_data.py             # CSV validation gate
 ├── lookup.py                 # lookup_item() + lookup_bin() unified entry point
 ├── refusal.py
@@ -228,9 +229,9 @@ campus-recycling-helper/
 ├── data/
 │   ├── recycling_rules.csv
 │   └── hazardous_items.csv
-├── templates/                # not in this snapshot
+├── templates/
 │   └── index.html
-├── static/                   # not in this snapshot
+├── static/
 │   └── style.css
 └── tests/
     ├── conftest.py           # puts the project root on sys.path for pytest
@@ -239,7 +240,8 @@ campus-recycling-helper/
     ├── test_conditions.py
     ├── test_adversarial.py
     ├── test_near_miss.py
-    └── test_citation_accuracy.py
+    ├── test_citation_accuracy.py
+    └── test_app.py
 ```
 
 ---
